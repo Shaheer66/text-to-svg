@@ -1,0 +1,9 @@
+.env
+__pycache__/
+data/output/*
+data/input/*
+.venv/
+venv/
+*.pyc
+model_env/
+logs/

@@ -1,0 +1,27 @@
+Segmentation as the "Digital Scissors" of our pipeline.
+
+What is it?
+It is the process of telling the computer exactly which pixels belong to the Subject (Cat) and which belong to the Empty Space (Background). It turns a colorful image into a high-contrast "silhouette."
+
+How it helps (The "Bridge" Logic)
+Generative AI creates "fuzzy" pixels. SVGs (Vectors) require "mathematical paths." You cannot turn fuzz into math directly.
+
+The Gap: AI outputs a PNG (a grid of colored dots).
+
+The Bridge: Segmentation creates a Binary Mask (Pure Black vs. Pure White).
+
+The Result: The computer now sees a "solid shape" it can trace with a pen.
+
+Basic Example
+Imagine a coloring book:
+
+Step 1 (Generation): You have a photo of a cat.
+
+Step 2 (Segmentation): You place a piece of tracing paper over it and fill the cat in entirely with black ink.
+
+The Outcome: You now have a solid "stencil" of the cat.
+
+Expected Outcome
+A file called step2_mask.png which looks like a solid white cat silhouette on a black background.
+
+Why this is critical: Without this, the SVG tracer would try to draw every tiny hair and shadow. With the mask, the tracer only draws the perfect outer boundary.

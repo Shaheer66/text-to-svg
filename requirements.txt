@@ -1,0 +1,8 @@
+httpx
+pillow
+python-dotenv
+huggingface_hub
+hf-xet
+groq
+opencv-python
+numpy
