@@ -35,48 +35,89 @@ class VectorTracer:
             f.write(full_svg)
             
         return svg_path
+    
 
-import cv2
+    #using the vtracer##########
+
+import vtracer
 import os
 
 class VectorTracer:
     """
-    Advanced Tracer: Captures internal geometry for detailed SVGs.
+    Production-grade Vectorizer using the VisionCortex VTracer engine.
+    Handles high-accuracy wireframes without 'bleeding' internal details.
     """
     def trace_to_svg(self, mask_path: str, svg_path: str):
-        mask = cv2.imread(mask_path, cv2.IMREAD_GRAYSCALE)
-        h, w = mask.shape
-        
-        # RETR_TREE captures the 'parent-child' relationship of lines
-        contours, hierarchy = cv2.findContours(mask, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
-        
-        svg_header = f'<svg width="{w}" height="{h}" viewBox="0 0 {w} {h}" xmlns="http://www.w3.org/2000/svg">'
-        paths = []
-        
-        if hierarchy is not None:
-            for i, cnt in enumerate(contours):
-                # Logic: If a contour has a parent, it's a 'hole' (fill it with white or skip)
-                # For this minimalist look, we will draw all significant contours
-                if cv2.contourArea(cnt) < 20: continue # Ignore tiny noise dots
-                
-                path_data = "M "
-                for j, pt in enumerate(cnt):
-                    x, y = pt[0]
-                    path_data += f"{x},{y} "
-                    if j == 0: path_data += "L "
-                path_data += "Z"
-                
-                # Determine color: Top-level is black, internal 'holes' are white
-                color = "black" if hierarchy[0][i][3] == -1 else "white"
-                paths.append(f'<path d="{path_data}" fill="{color}" />')
-            
-        full_svg = svg_header + "".join(paths) + "</svg>"
-        
+        # Ensure output directory exists
         os.makedirs(os.path.dirname(svg_path), exist_ok=True)
-        with open(svg_path, "w") as f:
-            f.write(full_svg)
-        return svg_path
 
+        # Final Verdict Logic: 
+        # We use 'binary' mode for the mask and 'cutout' to preserve internal holes.
+        vtracer.convert_image_to_svg_py(
+            mask_path, 
+            svg_path,
+            colormode = 'binary',     # Target B&W wireframes
+            hierarchical = 'cutout',  # KEY: Subtracts holes so eyes/facets stay clear
+            mode = 'spline',          # Uses Pro-level Bezier curves instead of jagged lines
+            filter_speckle = 4,       # Ignores tiny noise pixels
+            color_precision = 8,      # Max accuracy
+            layer_difference = 16,
+            corner_threshold = 60,    # Keeps geometric corners sharp
+            length_threshold = 4.0,   # Removes shaky micro-lines
+            max_iterations = 10       # Optimization depth
+        )
+        
+        return svg_path    
+
+
+# #fill with white color
+
+# import cv2
+# import os
+
+# class VectorTracer:
+#     """
+#     Advanced Tracer: Captures internal geometry for detailed SVGs.
+#     """
+#     def trace_to_svg(self, mask_path: str, svg_path: str):
+#         mask = cv2.imread(mask_path, cv2.IMREAD_GRAYSCALE)
+#         h, w = mask.shape
+        
+#         # RETR_TREE captures the 'parent-child' relationship of lines
+#         contours, hierarchy = cv2.findContours(mask, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+        
+#         svg_header = f'<svg width="{w}" height="{h}" viewBox="0 0 {w} {h}" xmlns="http://www.w3.org/2000/svg">'
+#         paths = []
+        
+#         if hierarchy is not None:
+#             for i, cnt in enumerate(contours):
+#                 # Logic: If a contour has a parent, it's a 'hole' (fill it with white or skip)
+#                 # For this minimalist look, we will draw all significant contours
+#                 if cv2.contourArea(cnt) < 20: continue # Ignore tiny noise dots
+                
+#                 path_data = "M "
+#                 for j, pt in enumerate(cnt):
+#                     x, y = pt[0]
+#                     path_data += f"{x},{y} "
+#                     if j == 0: path_data += "L "
+#                 path_data += "Z"
+                
+#                 # Determine color: Top-level is black, internal 'holes' are white
+#                 color = "black" if hierarchy[0][i][3] == -1 else "white"
+#                 paths.append(f'<path d="{path_data}" fill="{color}" />')
+            
+#         full_svg = svg_header + "".join(paths) + "</svg>"
+        
+#         os.makedirs(os.path.dirname(svg_path), exist_ok=True)
+#         with open(svg_path, "w") as f:
+#             f.write(full_svg)
+#         return svg_path
+
+
+
+
+
+###black svg
 # import cv2
 
 # class VectorTracer:
