@@ -90,26 +90,37 @@ logger = get_logger(__name__, "generator_logs.log")
 
 API_KEY = os.getenv("GROQ_API_KEY")
 if not API_KEY:
+    logger.error("GROQ_API_KEY is not set in environment variables.")
     raise EnvironmentError("GROQ_API_KEY missing.")
 
 client = Groq(api_key=API_KEY)
 
-def validate_prompt_guardrail(user_input: str) -> bool:
-    """Pre-LLM guardrail to save API costs."""
-    if not user_input or len(user_input.strip()) < 2:
-        logger.warning("Prompt rejected: Too short.")
+def model_guardrail_check(user_input: str) -> bool:
+    """
+    Uses llama-3.1-8b-instant to classify the intent.
+    Saves costs by filtering non-icon requests before the heavy model.
+    """
+    check_prompt = (
+        "Analyze the user input. If it is a request to generate a visual icon, "
+        "symbol, or shape, respond ONLY with 'VALID'. Otherwise, respond 'INVALID'.\n"
+        f"Input: {user_input}"
+    )
+    
+    try:
+        chat_completion = client.chat.completions.create(
+            model="llama-3.1-8b-instant",
+            messages=[{"role": "user", "content": check_prompt}],
+            temperature=0.0,
+            max_tokens=10 # Minimize generation cost
+        )
+        decision = chat_completion.choices[0].message.content.strip().upper()
+        return "VALID" in decision
+    except Exception as e:
+        logger.error(f"Guardrail check failed: {e}")
         return False
-    if len(user_input) > 150:
-        logger.warning("Prompt rejected: Too long (potential abuse/cost sink).")
-        return False
-    # Optional: Add regex to block known non-icon keywords (e.g., "code", "poem")
-    if re.search(r'\b(write|poem|essay|code)\b', user_input.lower()):
-        logger.warning("Prompt rejected: Failed intent filter.")
-        return False
-    return True
 
 def generate_icon(user_input: str) -> dict:
-    if not validate_prompt_guardrail(user_input):
+    if not model_guardrail_check(user_input):
         raise ValueError("Invalid prompt format or intent.")
 
     try:
