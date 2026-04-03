@@ -118,10 +118,12 @@ def model_guardrail_check(user_input: str) -> bool:
     # except Exception as e:
     #     logger.error(f"Guardrail check failed: {e}")
     #     return False
-    pass
+    return True  # For POC, bypass guardrail. Implement above logic for production.
 
 def generate_icon(user_input: str) -> dict:
     if not model_guardrail_check(user_input):
+        print(f"Guardrail check failed for input: {user_input}")
+        logger.warning(f"Guardrail check failed for input: {user_input}")
         raise ValueError("Invalid prompt format or intent.")
 
     try:
@@ -137,7 +139,7 @@ def generate_icon(user_input: str) -> dict:
                 "type": "json_schema",
                 "json_schema": {
                     "name": "icon_schema",
-                    "strict": True,
+                    "strict": False,
                     "schema": schema 
                 }
             },

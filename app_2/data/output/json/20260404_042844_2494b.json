@@ -1,0 +1,23 @@
+{
+  "viewBox": "0 0 24 24",
+  "elements": [
+    {
+      "type": "circle",
+      "cx": 12,
+      "cy": 12,
+      "r": 8,
+      "fill": "none",
+      "stroke": "#000",
+      "strokeWidth": 2
+    },
+    {
+      "type": "line",
+      "x1": 17.7,
+      "y1": 17.7,
+      "x2": 20.5,
+      "y2": 20.5,
+      "stroke": "#000",
+      "strokeWidth": 2
+    }
+  ]
+}

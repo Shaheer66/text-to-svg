@@ -115,7 +115,7 @@ def run_pipeline(text_prompt: str):
 
 if __name__ == "__main__":
     try:
-        user_input = "vibrant search icon with gradient"
+        user_input = "simple search icon"
         generated_path = run_pipeline(user_input)
         print(f"Process complete. Output: {generated_path}")
     except Exception as exc:
