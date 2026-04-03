@@ -96,29 +96,28 @@ if not API_KEY:
 client = Groq(api_key=API_KEY)
 
 def model_guardrail_check(user_input: str) -> bool:
-    # """
-    # Uses openai/gpt-oss-20b to classify the intent.
-    # Saves costs by filtering non-icon requests before the heavy model.
-    # """
-    # check_prompt = (
-    #     "Analyze the user input. If it is a request to generate a visual icon, "
-    #     "symbol, or shape, respond ONLY with 'VALID'. Otherwise, respond 'INVALID'.\n"
-    #     f"Input: {user_input}"
-    # )
+    """
+    Uses openai/gpt-oss-20b to classify the intent.
+    Saves costs by filtering non-icon requests before the heavy model.
+    """
+    check_prompt = (
+        "Analyze the user input. If it is a request to generate a visual icon, "
+        "symbol, or shape, respond ONLY with 'VALID'. Otherwise, respond 'INVALID'.\n"
+        f"Input: {user_input}"
+    )
     
-    # try:
-    #     chat_completion = client.chat.completions.create(
-    #         model="openai/gpt-oss-20b",
-    #         messages=[{"role": "user", "content": check_prompt}],
-    #         temperature=0.0,
-    #         max_tokens=10 # Minimize generation cost
-    #     )
-    #     decision = chat_completion.choices[0].message.content.strip().upper()
-    #     return "VALID" in decision
-    # except Exception as e:
-    #     logger.error(f"Guardrail check failed: {e}")
-    #     return False
-    return True  # For now, bypassing guardrail for development/testing
+    try:
+        chat_completion = client.chat.completions.create(
+            model="openai/gpt-oss-20b",
+            messages=[{"role": "user", "content": check_prompt}],
+            temperature=0.0,
+            max_tokens=10 # Minimize generation cost
+        )
+        decision = chat_completion.choices[0].message.content.strip().upper()
+        return "VALID" in decision
+    except Exception as e:
+        logger.error(f"Guardrail check failed: {e}")
+        return False
 
 def generate_icon(user_input: str) -> dict:
     if not model_guardrail_check(user_input):
@@ -128,7 +127,7 @@ def generate_icon(user_input: str) -> dict:
         logger.info(f"Generating: {user_input}")
         
         response = client.chat.completions.create(
-            model="llama-3.1-70b-versatile", # Update to your specific model
+            model="openai/gpt-oss-120b", 
             messages=[
                 {"role": "system", "content": prompt},
                 {"role": "user", "content": user_input}
