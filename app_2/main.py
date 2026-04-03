@@ -44,7 +44,7 @@ def run_pipeline(text_prompt: str, output_svg_path: str):
 if __name__ == "__main__":
    
     try:
-        prompt = "stock icon"
+        prompt = "search icon"
         output_file = f"D:/projects/text-to-svg/app_2/data/output/{prompt.replace(' ', '_')}.svg"
         run_pipeline(prompt, output_file)
         logger.info("Pipeline executed successfully")
