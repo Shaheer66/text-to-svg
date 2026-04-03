@@ -139,10 +139,10 @@ def run_full_pipeline():
     svg_output = "data/output/step3_3_final.svg"
     
     
-    reference_img = os.path.join(asset_dir, "gemini_sample.png")
-    base_img = os.path.join(output_dir, "gemini_sample.png")
-    mask_img = os.path.join(output_dir, "gemini_sample_2_mask.png")
-    svg_output = os.path.join(output_dir, "gemini_sample_2_final.svg")
+    reference_img = os.path.join(asset_dir, "local_test_2_output.png")
+    base_img = os.path.join(output_dir, "local_test_2_output.png")
+    mask_img = os.path.join(output_dir, "local_test_2_mask.png")
+    svg_output = os.path.join(output_dir, "local_test_2_final.svg")
     
    
     segmentor = SemanticSegmenter()

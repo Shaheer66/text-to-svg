@@ -6,3 +6,4 @@ hf-xet
 groq
 opencv-python
 numpy
+vtracer
