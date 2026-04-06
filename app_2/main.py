@@ -115,7 +115,7 @@ def run_pipeline(text_prompt: str):
 
 if __name__ == "__main__":
     try:
-        user_input = "Vector icon of the OpenAI logo. Subject: A stylized hexagonal rose composed of six interlocking, overlapping pill-shaped segments. Geometry: Each segment is a distinct 'petal' that curves into the center, creating a recursive woven knot. Style: SOTA flat design, perfectly symmetrical, high-precision SVG paths. Color: Solid black (#000000). Background: Isolated on pure white. Technical: Use distinct elements for each of the six segments to ensure the 'woven' look is mathematically accurate."
+        user_input = "SOTA SVG OpenAI Logo. Logic: 6 interlocking asymmetrical 'J' segments. Geometry: Each path must start at (50, 42), extend straight to (68, 42), then perform a wide 180-degree Cubic Bézier curve to (50, 74). Technical: Stroke-width 8, stroke-linecap 'round', no fill. Transformation: Use 'rotate(n 50 50)' for n in 0, 60, 120, 180, 240, 300. Spatial Goal: The 'hook' of each segment must physically wrap around the straight stem of the next segment to create the recursive hexagonal knot.."
         #user_input = "create a realistic icon of cat face with whiskers and pointy ears, it should looks like human drawn, think about in details, evaluate your answer and re-iterate it and get something out of the box"
         #user_input = "Tiger Icon, realistic, detailed, human-drawn style, with stripes and fierce expression"
         #user_input = "ChatGPT Icon, realistic, detailed, human-drawn style, with speech bubble and friendly expression"
