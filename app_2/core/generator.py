@@ -74,14 +74,14 @@
 
 ##below is the update latest version of teh code and above is the just poc level thing
 
-# generator.py
+###generator.py
 import os
 import json
 import re
 import logging
 from groq import Groq
 from dotenv import load_dotenv
-from app_2.prompts.generator_prompt import prompt_v2 as prompt
+from app_2.prompts.generator_prompt import prompt_v5 as prompt
 from app_2.json_schema.schema import schema_v2 as schema
 from app_2.utils.log import get_logger
 
@@ -143,7 +143,7 @@ def generate_icon(user_input: str) -> dict:
                     "schema": schema 
                 }
             },
-            temperature=0.1 # Crucial for deterministic math output
+            temperature=0.0 # Crucial for deterministic math output
         )
 
         content = response.choices[0].message.content
@@ -160,3 +160,79 @@ if __name__ == "__main__":
         print(json.dumps(result, indent=2))
     except Exception as e:
         print(f"Error: {e}")
+
+####below is using gpt 4.1 auzure openai and get even worse results
+# import os
+# import json
+# import logging
+# from openai import AzureOpenAI  # Switched to AzureOpenAI client
+# from dotenv import load_dotenv
+# from app_2.prompts.generator_prompt import prompt_v5 as prompt
+# from app_2.json_schema.schema import schema_v3 as schema
+# from app_2.utils.log import get_logger
+
+# load_dotenv()
+# logger = get_logger(__name__, "generator_logs.log")
+
+# # Azure Specific Environment Variables
+# ENDPOINT = os.getenv("AZURE_OPENAI_ENDPOINT") # e.g., https://text-to-svg-resource.openai.azure.com/
+# API_KEY = os.getenv("AZURE_OPENAI_API_KEY")
+# DEPLOYMENT_NAME = os.getenv("AZURE_DEPLOYMENT_NAME", "gpt-4.1")
+
+# if not API_KEY or not ENDPOINT:
+#     logger.error("Azure credentials missing in environment variables.")
+#     raise EnvironmentError("AZURE_OPENAI_API_KEY or AZURE_OPENAI_ENDPOINT missing.")
+
+# # Initialize the Azure OpenAI Client
+# client = AzureOpenAI(
+#     azure_endpoint=ENDPOINT,
+#     api_key=API_KEY,
+#     api_version="2024-08-01-preview"  # Required for Structured Outputs (JSON Schema)
+# )
+
+# def model_guardrail_check(user_input: str) -> bool:
+#     """
+#     For POC, bypass guardrail. 
+#     In production, use a smaller deployment (like gpt-4o-mini) for cost efficiency.
+#     """
+#     return True 
+
+# def generate_icon(user_input: str) -> dict:
+#     if not model_guardrail_check(user_input):
+#         logger.warning(f"Guardrail check failed for input: {user_input}")
+#         raise ValueError("Invalid prompt format or intent.")
+
+#     try:
+#         logger.info(f"Generating icon via Azure GPT-4.1 for: {user_input}")
+        
+#         response = client.chat.completions.create(
+#             model=DEPLOYMENT_NAME, 
+#             messages=[
+#                 {"role": "system", "content": prompt},
+#                 {"role": "user", "content": user_input}
+#             ],
+#             response_format={
+#                 "type": "json_schema",
+#                 "json_schema": {
+#                     "name": "icon_generation_schema",
+#                     "strict": False, # Azure GPT-4.1 supports Strict Mode for guaranteed schema adherence
+#                     "schema": schema 
+#                 }
+#             },
+#             temperature=0.1
+#         )
+
+#         content = response.choices[0].message.content
+#         return json.loads(content)
+
+#     except Exception as e:
+#         logger.error(f"Azure Generation failed: {e}")
+#         raise RuntimeError(f"Pipeline error: {e}")
+
+# if __name__ == "__main__":
+#     test_input = "Generate a simple play button icon"
+#     try:
+#         result = generate_icon(test_input)
+#         print(json.dumps(result, indent=2))
+#     except Exception as e:
+#         print(f"Error: {e}")

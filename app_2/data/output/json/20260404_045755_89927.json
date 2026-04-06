@@ -1,0 +1,100 @@
+{
+  "viewBox": "0 0 100 100",
+  "defs": [
+    {
+      "type": "radialGradient",
+      "id": "bgGlow",
+      "cx": "50%",
+      "cy": "50%",
+      "r": "50%",
+      "stops": [
+        {
+          "offset": "0%",
+          "stopColor": "#FFF9C4",
+          "stopOpacity": 0.8
+        },
+        {
+          "offset": "100%",
+          "stopColor": "#FFF9C4",
+          "stopOpacity": 0
+        }
+      ]
+    }
+  ],
+  "elements": [
+    {
+      "type": "rect",
+      "x": 0,
+      "y": 0,
+      "width": 100,
+      "height": 100,
+      "rx": null,
+      "ry": null,
+      "fill": "url(#bgGlow)",
+      "opacity": null,
+      "stroke": null,
+      "strokeLinecap": null,
+      "strokeLinejoin": null,
+      "strokeWidth": null,
+      "transform": null
+    },
+    {
+      "type": "g",
+      "children": [
+        {
+          "type": "path",
+          "d": "M30,70 C30,55 40,45 50,45 C60,45 70,55 70,70 L70,80 C70,85 65,90 60,90 L40,90 C35,90 30,85 30,80 Z",
+          "fill": "#FFCC80",
+          "opacity": null,
+          "stroke": null,
+          "strokeLinecap": null,
+          "strokeLinejoin": null,
+          "strokeWidth": null,
+          "transform": null
+        },
+        {
+          "type": "path",
+          "d": "M45,30 L40,45 L35,30 L30,45 L25,30 L30,55 L70,55 L75,30 L70,45 L65,30 L60,45 Z",
+          "fill": "#FFCC80",
+          "opacity": null,
+          "stroke": null,
+          "strokeLinecap": null,
+          "strokeLinejoin": null,
+          "strokeWidth": null,
+          "transform": null
+        },
+        {
+          "type": "g",
+          "children": [
+            {
+              "type": "circle",
+              "cx": 45,
+              "cy": 50,
+              "r": 2,
+              "fill": "#6D4C41",
+              "opacity": null,
+              "stroke": null,
+              "strokeLinecap": null,
+              "strokeLinejoin": null,
+              "strokeWidth": null,
+              "transform": null
+            },
+            {
+              "type": "circle",
+              "cx": 45.5,
+              "cy": 49.5,
+              "r": 0.8,
+              "fill": "#FFF9C4",
+              "opacity": null,
+              "stroke": null,
+              "strokeLinecap": null,
+              "strokeLinejoin": null,
+              "strokeWidth": null,
+              "transform": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

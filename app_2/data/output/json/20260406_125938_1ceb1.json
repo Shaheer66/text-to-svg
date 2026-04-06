@@ -1,0 +1,73 @@
+{
+  "viewBox": "0 0 100 100",
+  "defs": [
+    {
+      "type": "radialGradient",
+      "id": "glassGrad",
+      "cx": "50%",
+      "cy": "50%",
+      "r": "50%",
+      "stops": [
+        {
+          "offset": "0%",
+          "stopColor": "#ffffff",
+          "stopOpacity": 0.2
+        },
+        {
+          "offset": "100%",
+          "stopColor": "#ffffff",
+          "stopOpacity": 0
+        }
+      ]
+    }
+  ],
+  "elements": [
+    {
+      "type": "g",
+      "children": [
+        {
+          "type": "circle",
+          "cx": 45,
+          "cy": 45,
+          "r": 30,
+          "fill": "#000000",
+          "opacity": 0.1
+        }
+      ]
+    },
+    {
+      "type": "g",
+      "children": [
+        {
+          "type": "circle",
+          "cx": 40,
+          "cy": 40,
+          "r": 30,
+          "fill": "url(#glassGrad)",
+          "stroke": "#555555",
+          "strokeWidth": 4
+        },
+        {
+          "type": "path",
+          "d": "M30 30 C28 28, 32 24, 35 25",
+          "stroke": "#ffffff",
+          "strokeWidth": 2,
+          "strokeLinecap": "round",
+          "strokeLinejoin": "round",
+          "fill": "none",
+          "opacity": 0.6
+        },
+        {
+          "type": "line",
+          "x1": 62,
+          "y1": 62,
+          "x2": 80,
+          "y2": 80,
+          "stroke": "#555555",
+          "strokeWidth": 8,
+          "strokeLinecap": "round"
+        }
+      ]
+    }
+  ]
+}

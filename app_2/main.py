@@ -115,7 +115,11 @@ def run_pipeline(text_prompt: str):
 
 if __name__ == "__main__":
     try:
-        user_input = "simple search icon"
+        user_input = "Vector icon of the OpenAI logo. Subject: A stylized hexagonal rose composed of six interlocking, overlapping pill-shaped segments. Geometry: Each segment is a distinct 'petal' that curves into the center, creating a recursive woven knot. Style: SOTA flat design, perfectly symmetrical, high-precision SVG paths. Color: Solid black (#000000). Background: Isolated on pure white. Technical: Use distinct elements for each of the six segments to ensure the 'woven' look is mathematically accurate."
+        #user_input = "create a realistic icon of cat face with whiskers and pointy ears, it should looks like human drawn, think about in details, evaluate your answer and re-iterate it and get something out of the box"
+        #user_input = "Tiger Icon, realistic, detailed, human-drawn style, with stripes and fierce expression"
+        #user_input = "ChatGPT Icon, realistic, detailed, human-drawn style, with speech bubble and friendly expression"
+        #user_input = "Search Icon, realistic, detailed, human-drawn style, with magnifying glass and subtle shadow"
         generated_path = run_pipeline(user_input)
         print(f"Process complete. Output: {generated_path}")
     except Exception as exc:

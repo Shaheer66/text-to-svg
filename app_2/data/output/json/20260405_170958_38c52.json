@@ -1,0 +1,85 @@
+{
+  "viewBox": "0 0 100 100",
+  "elements": [
+    {
+      "type": "g",
+      "children": [
+        {
+          "type": "path",
+          "d": "M30,20 C20,30 20,60 30,70 C40,80 60,80 70,70 C80,60 80,30 70,20 C60,10 40,10 30,20 Z",
+          "fill": "#ff8c00",
+          "stroke": "#000",
+          "strokeWidth": 1
+        },
+        {
+          "type": "path",
+          "d": "M35,30 L45,35",
+          "stroke": "#000",
+          "strokeWidth": 2,
+          "strokeLinecap": "round"
+        },
+        {
+          "type": "path",
+          "d": "M55,30 L45,35",
+          "stroke": "#000",
+          "strokeWidth": 2,
+          "strokeLinecap": "round"
+        },
+        {
+          "type": "path",
+          "d": "M40,45 L50,50",
+          "stroke": "#000",
+          "strokeWidth": 2,
+          "strokeLinecap": "round"
+        },
+        {
+          "type": "path",
+          "d": "M60,45 L50,50",
+          "stroke": "#000",
+          "strokeWidth": 2,
+          "strokeLinecap": "round"
+        },
+        {
+          "type": "circle",
+          "cx": 45,
+          "cy": 40,
+          "r": 5,
+          "fill": "#fff"
+        },
+        {
+          "type": "circle",
+          "cx": 55,
+          "cy": 40,
+          "r": 5,
+          "fill": "#fff"
+        },
+        {
+          "type": "circle",
+          "cx": 47,
+          "cy": 42,
+          "r": 2,
+          "fill": "#000"
+        },
+        {
+          "type": "circle",
+          "cx": 57,
+          "cy": 42,
+          "r": 2,
+          "fill": "#000"
+        },
+        {
+          "type": "path",
+          "d": "M45,55 Q50,60 55,55",
+          "stroke": "#000",
+          "strokeWidth": 1,
+          "fill": "none"
+        },
+        {
+          "type": "path",
+          "d": "M50,50 L48,52 L52,52 Z",
+          "fill": "#000"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "viewBox": "0 0 100 100",
+  "defs": [
+    {
+      "type": "radialGradient",
+      "id": "lensGrad",
+      "cx": "50%",
+      "cy": "50%",
+      "r": "50%",
+      "stops": [
+        {
+          "offset": "0%",
+          "stopColor": "#ffffff"
+        },
+        {
+          "offset": "100%",
+          "stopColor": "#cccccc"
+        }
+      ]
+    }
+  ],
+  "elements": [
+    {
+      "type": "g",
+      "children": [
+        {
+          "type": "circle",
+          "cx": 50,
+          "cy": 45,
+          "r": 20,
+          "fill": "#000000",
+          "opacity": 0.15,
+          "transform": "translate(3,3)"
+        },
+        {
+          "type": "g",
+          "children": [
+            {
+              "type": "circle",
+              "cx": 50,
+              "cy": 45,
+              "r": 20,
+              "fill": "url(#lensGrad)",
+              "stroke": "#555555",
+              "strokeWidth": 2
+            },
+            {
+              "type": "circle",
+              "cx": 44,
+              "cy": 40,
+              "r": 5,
+              "fill": "#ffffff",
+              "opacity": 0.3
+            },
+            {
+              "type": "rect",
+              "x": 65,
+              "y": 65,
+              "width": 30,
+              "height": 6,
+              "fill": "#777777",
+              "stroke": "#555555",
+              "strokeWidth": 1,
+              "transform": "rotate(45 80 68)"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

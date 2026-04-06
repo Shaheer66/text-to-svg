@@ -1,0 +1,29 @@
+{
+  "viewBox": "0 0 100 100",
+  "elements": [
+    {
+      "type": "g",
+      "children": [
+        {
+          "type": "circle",
+          "cx": 35,
+          "cy": 35,
+          "r": 30,
+          "fill": "none",
+          "stroke": "#000",
+          "strokeWidth": 8
+        },
+        {
+          "type": "line",
+          "x1": 60,
+          "y1": 60,
+          "x2": 85,
+          "y2": 85,
+          "stroke": "#000",
+          "strokeWidth": 8,
+          "strokeLinecap": "round"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,114 @@
+{
+  "viewBox": "0 0 100 100",
+  "defs": [
+    {
+      "type": "radialGradient",
+      "id": "butterflyGrad",
+      "cx": "50%",
+      "cy": "50%",
+      "r": "50%",
+      "stops": [
+        {
+          "offset": "0%",
+          "stopColor": "#ff9a9e"
+        },
+        {
+          "offset": "100%",
+          "stopColor": "#fad0c4"
+        }
+      ]
+    }
+  ],
+  "elements": [
+    {
+      "type": "g",
+      "children": [
+        {
+          "type": "path",
+          "d": "M25,60 C25,45 55,45 55,60 C55,75 25,75 25,60 Z",
+          "fill": "#777777"
+        },
+        {
+          "type": "circle",
+          "cx": 40,
+          "cy": 40,
+          "r": 12,
+          "fill": "#555555"
+        },
+        {
+          "type": "path",
+          "d": "M32,30 L36,20 L40,30 Z",
+          "fill": "#555555"
+        },
+        {
+          "type": "path",
+          "d": "M48,30 L44,20 L40,30 Z",
+          "fill": "#555555"
+        },
+        {
+          "type": "path",
+          "d": "M55,70 C65,60 65,80 75,70",
+          "stroke": "#555555",
+          "strokeWidth": 2,
+          "fill": "none"
+        },
+        {
+          "type": "circle",
+          "cx": 36,
+          "cy": 38,
+          "r": 1.5,
+          "fill": "#ffffff"
+        },
+        {
+          "type": "circle",
+          "cx": 44,
+          "cy": 38,
+          "r": 1.5,
+          "fill": "#ffffff"
+        },
+        {
+          "type": "circle",
+          "cx": 36,
+          "cy": 38,
+          "r": 0.7,
+          "fill": "#000000"
+        },
+        {
+          "type": "circle",
+          "cx": 44,
+          "cy": 38,
+          "r": 0.7,
+          "fill": "#000000"
+        }
+      ]
+    },
+    {
+      "type": "g",
+      "children": [
+        {
+          "type": "path",
+          "d": "M60,30 C55,20 45,20 40,30 C45,40 55,40 60,30 Z",
+          "fill": "url(#butterflyGrad)",
+          "stroke": "#ff66aa",
+          "strokeWidth": 0.5
+        },
+        {
+          "type": "path",
+          "d": "M60,30 C65,20 75,20 80,30 C75,40 65,40 60,30 Z",
+          "fill": "url(#butterflyGrad)",
+          "stroke": "#ff66aa",
+          "strokeWidth": 0.5
+        },
+        {
+          "type": "line",
+          "x1": 60,
+          "y1": 30,
+          "x2": 60,
+          "y2": 45,
+          "stroke": "#ff66aa",
+          "strokeWidth": 1
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "viewBox": "0 0 100 100",
+  "defs": [
+    {
+      "type": "radialGradient",
+      "id": "lensGrad",
+      "cx": "50%",
+      "cy": "50%",
+      "r": "50%",
+      "stops": [
+        {
+          "offset": "0%",
+          "stopColor": "#ffffff",
+          "stopOpacity": 0.4
+        },
+        {
+          "offset": "100%",
+          "stopColor": "#c0c0ff",
+          "stopOpacity": 0.1
+        }
+      ]
+    }
+  ],
+  "elements": [
+    {
+      "type": "circle",
+      "cx": 50,
+      "cy": 55,
+      "r": 22,
+      "fill": "#000000",
+      "opacity": 0.15,
+      "transform": "scale(1,0.4)"
+    },
+    {
+      "type": "g",
+      "children": [
+        {
+          "type": "circle",
+          "cx": 50,
+          "cy": 40,
+          "r": 20,
+          "fill": "url(#lensGrad)",
+          "stroke": "#555555",
+          "strokeWidth": 2
+        },
+        {
+          "type": "path",
+          "d": "M65,55 C70,60 75,65 80,70",
+          "stroke": "#555555",
+          "strokeWidth": 6,
+          "strokeLinecap": "round",
+          "fill": "none"
+        },
+        {
+          "type": "circle",
+          "cx": 44,
+          "cy": 32,
+          "r": 4,
+          "fill": "#ffffff",
+          "opacity": 0.5
+        }
+      ]
+    }
+  ]
+}

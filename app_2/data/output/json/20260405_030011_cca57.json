@@ -1,0 +1,126 @@
+{
+  "viewBox": "0 0 100 100",
+  "defs": [
+    {
+      "cx": null,
+      "cy": null,
+      "id": "gradBody",
+      "r": null,
+      "stops": [
+        {
+          "offset": "0%",
+          "stopColor": "#0D47A1",
+          "stopOpacity": 1
+        },
+        {
+          "offset": "100%",
+          "stopColor": "#0A3D91",
+          "stopOpacity": 1
+        }
+      ],
+      "type": "linearGradient",
+      "x1": "0%",
+      "x2": "0%",
+      "y1": "0%",
+      "y2": "100%"
+    },
+    {
+      "cx": null,
+      "cy": null,
+      "id": "gradScreen",
+      "r": null,
+      "stops": [
+        {
+          "offset": "0%",
+          "stopColor": "#1976D2",
+          "stopOpacity": 1
+        },
+        {
+          "offset": "100%",
+          "stopColor": "#BBDEFB",
+          "stopOpacity": 1
+        }
+      ],
+      "type": "linearGradient",
+      "x1": "0%",
+      "x2": "0%",
+      "y1": "0%",
+      "y2": "100%"
+    }
+  ],
+  "elements": [
+    {
+      "type": "g",
+      "children": [
+        {
+          "type": "rect",
+          "x": 20,
+          "y": 10,
+          "width": 60,
+          "height": 80,
+          "rx": 8,
+          "ry": 8,
+          "fill": "url(#gradBody)",
+          "opacity": null,
+          "stroke": null,
+          "strokeLinecap": null,
+          "strokeLinejoin": null,
+          "strokeWidth": null,
+          "transform": null
+        },
+        {
+          "type": "rect",
+          "x": 30,
+          "y": 25,
+          "width": 40,
+          "height": 55,
+          "rx": 4,
+          "ry": 4,
+          "fill": "url(#gradScreen)",
+          "opacity": null,
+          "stroke": null,
+          "strokeLinecap": null,
+          "strokeLinejoin": null,
+          "strokeWidth": null,
+          "transform": null
+        },
+        {
+          "type": "rect",
+          "x": 45,
+          "y": 15,
+          "width": 10,
+          "height": 4,
+          "rx": 1,
+          "ry": 1,
+          "fill": "#BBDEFB",
+          "opacity": null,
+          "stroke": null,
+          "strokeLinecap": null,
+          "strokeLinejoin": null,
+          "strokeWidth": null,
+          "transform": null
+        },
+        {
+          "type": "circle",
+          "cx": 50,
+          "cy": 85,
+          "r": 4,
+          "fill": "#FFFFFF",
+          "opacity": null,
+          "stroke": null,
+          "strokeLinecap": null,
+          "strokeLinejoin": null,
+          "strokeWidth": null,
+          "transform": null
+        }
+      ],
+      "fill": null,
+      "opacity": null,
+      "stroke": null,
+      "strokeLinecap": null,
+      "strokeLinejoin": null,
+      "strokeWidth": null,
+      "transform": null
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "viewBox": "0 0 100 100",
+  "defs": [
+    {
+      "type": "linearGradient",
+      "id": "grad1",
+      "x1": "0%",
+      "y1": "0%",
+      "x2": "0%",
+      "y2": "100%",
+      "stops": [
+        {
+          "offset": "0%",
+          "stopColor": "#b0b0b0"
+        },
+        {
+          "offset": "100%",
+          "stopColor": "#707070"
+        }
+      ]
+    }
+  ],
+  "elements": [
+    {
+      "type": "g",
+      "children": [
+        {
+          "type": "path",
+          "d": "M20,30 C20,20 80,20 80,30 C80,40 20,40 20,30 Z",
+          "fill": "url(#grad1)",
+          "stroke": "#555",
+          "strokeWidth": 1
+        },
+        {
+          "type": "rect",
+          "x": 20,
+          "y": 30,
+          "width": 60,
+          "height": 40,
+          "fill": "url(#grad1)",
+          "stroke": "#555",
+          "strokeWidth": 1
+        },
+        {
+          "type": "path",
+          "d": "M20,70 C20,60 80,60 80,70 C80,80 20,80 20,70 Z",
+          "fill": "url(#grad1)",
+          "stroke": "#555",
+          "strokeWidth": 1
+        }
+      ]
+    }
+  ]
+}

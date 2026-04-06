@@ -1,0 +1,107 @@
+{
+  "viewBox": "0 0 100 100",
+  "defs": [
+    {
+      "id": "glassGradient",
+      "type": "radialGradient",
+      "cx": "52",
+      "cy": "48",
+      "r": "18",
+      "stops": [
+        {
+          "offset": "0%",
+          "stopColor": "#f8fafc",
+          "stopOpacity": 0.95
+        },
+        {
+          "offset": "70%",
+          "stopColor": "#dbeafe",
+          "stopOpacity": 0.7
+        },
+        {
+          "offset": "100%",
+          "stopColor": "#a3b8d8",
+          "stopOpacity": 0.5
+        }
+      ]
+    },
+    {
+      "id": "metalGradient",
+      "type": "linearGradient",
+      "x1": "38",
+      "y1": "48",
+      "x2": "66",
+      "y2": "48",
+      "stops": [
+        {
+          "offset": "0%",
+          "stopColor": "#b0b7c3"
+        },
+        {
+          "offset": "60%",
+          "stopColor": "#e5e7eb"
+        },
+        {
+          "offset": "100%",
+          "stopColor": "#7b8794"
+        }
+      ]
+    }
+  ],
+  "elements": [
+    {
+      "type": "g",
+      "children": [
+        {
+          "type": "ellipse",
+          "cx": 52,
+          "cy": 48,
+          "rx": 18,
+          "ry": 18,
+          "fill": "url(#glassGradient)",
+          "stroke": "url(#metalGradient)",
+          "strokeWidth": 2.2
+        },
+        {
+          "type": "path",
+          "d": "M65.5 61.5 C67.5 63.5, 75 71, 77 73 C78.5 74.5, 77.5 77, 75.5 76 C73.5 75, 65.5 67.5, 63.5 65.5",
+          "stroke": "url(#metalGradient)",
+          "strokeWidth": 5,
+          "strokeLinecap": "round",
+          "strokeLinejoin": "round",
+          "fill": "none"
+        },
+        {
+          "type": "path",
+          "d": "M54 41 Q57 39, 60 44 Q63 49, 57 52 Q51 55, 54 41 Z",
+          "fill": "#e0e7ef",
+          "opacity": 0.25
+        },
+        {
+          "type": "circle",
+          "cx": 57,
+          "cy": 44,
+          "r": 2.2,
+          "fill": "#fff",
+          "opacity": 0.7
+        },
+        {
+          "type": "path",
+          "d": "M52 66 Q48 68, 52 70 Q56 72, 52 66 Z",
+          "fill": "#b0b7c3",
+          "opacity": 0.13
+        }
+      ],
+      "opacity": 1
+    },
+    {
+      "type": "ellipse",
+      "cx": 54,
+      "cy": 78,
+      "rx": 22,
+      "ry": 7,
+      "fill": "#000",
+      "opacity": 0.13
+    }
+  ]
+}

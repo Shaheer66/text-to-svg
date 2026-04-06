@@ -1,0 +1,32 @@
+{
+  "viewBox": "0 0 100 100",
+  "elements": [
+    {
+      "type": "circle",
+      "cx": 40,
+      "cy": 40,
+      "r": 30,
+      "stroke": "#000",
+      "strokeWidth": 8,
+      "fill": "none"
+    },
+    {
+      "type": "line",
+      "x1": 62,
+      "y1": 62,
+      "x2": 85,
+      "y2": 85,
+      "stroke": "#000",
+      "strokeWidth": 8,
+      "strokeLinecap": "round"
+    },
+    {
+      "type": "circle",
+      "cx": 32,
+      "cy": 32,
+      "r": 5,
+      "fill": "#fff",
+      "opacity": 0.6
+    }
+  ]
+}

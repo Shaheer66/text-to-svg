@@ -1,0 +1,67 @@
+{
+  "viewBox": "0 0 100 100",
+  "elements": [
+    {
+      "type": "g",
+      "children": [
+        {
+          "type": "circle",
+          "cx": 40,
+          "cy": 40,
+          "r": 30,
+          "fill": "#4285F4",
+          "opacity": null,
+          "stroke": null,
+          "strokeLinecap": null,
+          "strokeLinejoin": null,
+          "strokeWidth": null,
+          "transform": null
+        },
+        {
+          "type": "circle",
+          "cx": 40,
+          "cy": 40,
+          "r": 33,
+          "fill": "#1A237E",
+          "opacity": 0.2,
+          "stroke": null,
+          "strokeLinecap": null,
+          "strokeLinejoin": null,
+          "strokeWidth": null,
+          "transform": null
+        },
+        {
+          "type": "path",
+          "d": "M65 65 L85 85",
+          "fill": null,
+          "opacity": null,
+          "stroke": "#0F9D58",
+          "strokeLinecap": "round",
+          "strokeLinejoin": null,
+          "strokeWidth": 8,
+          "transform": null
+        },
+        {
+          "type": "circle",
+          "cx": 30,
+          "cy": 30,
+          "r": 8,
+          "fill": "#FFFFFF",
+          "opacity": null,
+          "stroke": null,
+          "strokeLinecap": null,
+          "strokeLinejoin": null,
+          "strokeWidth": null,
+          "transform": null
+        }
+      ],
+      "fill": null,
+      "opacity": null,
+      "stroke": null,
+      "strokeLinecap": null,
+      "strokeLinejoin": null,
+      "strokeWidth": null,
+      "transform": null
+    }
+  ]
+}
