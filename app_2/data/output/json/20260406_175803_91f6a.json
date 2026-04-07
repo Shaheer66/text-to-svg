@@ -1,0 +1,39 @@
+{
+  "viewBox": "0 0 100 100",
+  "elements": [
+    {
+      "type": "g",
+      "children": [
+        {
+          "type": "path",
+          "d": "M20 40 L70 20 L70 80 L20 60 Z",
+          "fill": "black"
+        },
+        {
+          "type": "rect",
+          "x": 30,
+          "y": 55,
+          "width": 5,
+          "height": 15,
+          "fill": "black"
+        },
+        {
+          "type": "rect",
+          "x": 45,
+          "y": 45,
+          "width": 5,
+          "height": 25,
+          "fill": "black"
+        },
+        {
+          "type": "rect",
+          "x": 60,
+          "y": 35,
+          "width": 5,
+          "height": 35,
+          "fill": "black"
+        }
+      ]
+    }
+  ]
+}

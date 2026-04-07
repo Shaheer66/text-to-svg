@@ -1,0 +1,29 @@
+{
+  "viewBox": "0 0 100 100",
+  "elements": [
+    {
+      "type": "g",
+      "children": [
+        {
+          "type": "circle",
+          "cx": 40,
+          "cy": 40,
+          "r": 30,
+          "stroke": "currentColor",
+          "strokeWidth": 8,
+          "fill": null
+        },
+        {
+          "type": "line",
+          "x1": 62,
+          "y1": 62,
+          "x2": 80,
+          "y2": 80,
+          "stroke": "currentColor",
+          "strokeWidth": 8,
+          "strokeLinecap": "round"
+        }
+      ]
+    }
+  ]
+}

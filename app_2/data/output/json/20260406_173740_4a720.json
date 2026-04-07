@@ -1,0 +1,37 @@
+{
+  "viewBox": "0 0 100 100",
+  "defs": [
+    {
+      "id": "grad1",
+      "type": "radialGradient",
+      "cx": "50%",
+      "cy": "50%",
+      "r": "50%",
+      "stops": [
+        {
+          "offset": "0%",
+          "stopColor": "#ff7e5f"
+        },
+        {
+          "offset": "100%",
+          "stopColor": "#feb47b"
+        }
+      ]
+    }
+  ],
+  "elements": [
+    {
+      "type": "circle",
+      "cx": 50,
+      "cy": 50,
+      "r": 45,
+      "fill": "url(#grad1)"
+    },
+    {
+      "type": "polygon",
+      "points": "40,30 40,70 70,50",
+      "fill": "#ffffff",
+      "opacity": 0.9
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "viewBox": "0 0 100 100",
+  "defs": [
+    {
+      "id": "playGrad",
+      "type": "radialGradient",
+      "cx": "50%",
+      "cy": "50%",
+      "r": "50%",
+      "stops": [
+        {
+          "offset": 0,
+          "stopColor": "#ffffff",
+          "stopOpacity": 0.3
+        },
+        {
+          "offset": 1,
+          "stopColor": "#000000",
+          "stopOpacity": 0.3
+        }
+      ]
+    }
+  ],
+  "elements": [
+    {
+      "type": "g",
+      "children": [
+        {
+          "type": "circle",
+          "cx": 50,
+          "cy": 50,
+          "r": 45,
+          "fill": "url(#playGrad)"
+        },
+        {
+          "type": "path",
+          "d": "M35 30 L35 70 L70 50 Z",
+          "fill": "#ffffff"
+        }
+      ]
+    }
+  ]
+}

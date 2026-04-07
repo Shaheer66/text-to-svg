@@ -1,0 +1,120 @@
+{
+  "viewBox": "0 0 100 100",
+  "defs": [
+    {
+      "type": "linearGradient",
+      "id": "megaphoneGrad",
+      "x1": "0%",
+      "y1": "0%",
+      "x2": "100%",
+      "y2": "0%",
+      "stops": [
+        {
+          "offset": "0%",
+          "stopColor": "#ffcc00"
+        },
+        {
+          "offset": "100%",
+          "stopColor": "#ff9900"
+        }
+      ]
+    }
+  ],
+  "elements": [
+    {
+      "type": "g",
+      "children": [
+        {
+          "type": "path",
+          "d": "M20,40 L60,30 L65,35 L25,45 Z",
+          "fill": "url(#megaphoneGrad)",
+          "stroke": "#b36b00",
+          "strokeWidth": 1,
+          "strokeLinecap": "round",
+          "strokeLinejoin": "round"
+        },
+        {
+          "type": "rect",
+          "x": 15,
+          "y": 45,
+          "width": 5,
+          "height": 20,
+          "fill": "#b36b00",
+          "stroke": "#8c5400",
+          "strokeWidth": 0.5
+        },
+        {
+          "type": "circle",
+          "cx": 58,
+          "cy": 32,
+          "r": 2,
+          "fill": "#ffffff",
+          "opacity": 0.6,
+          "stroke": null
+        }
+      ]
+    },
+    {
+      "type": "g",
+      "children": [
+        {
+          "type": "line",
+          "x1": 68,
+          "y1": 30,
+          "x2": 68,
+          "y2": 80,
+          "stroke": "#333333",
+          "strokeWidth": 0.8
+        },
+        {
+          "type": "line",
+          "x1": 68,
+          "y1": 80,
+          "x2": 92,
+          "y2": 80,
+          "stroke": "#333333",
+          "strokeWidth": 0.8
+        },
+        {
+          "type": "rect",
+          "x": 70,
+          "y": 60,
+          "width": 6,
+          "height": 20,
+          "fill": "#4a90e2",
+          "stroke": "#2c5aa0",
+          "strokeWidth": 0.5
+        },
+        {
+          "type": "rect",
+          "x": 78,
+          "y": 50,
+          "width": 6,
+          "height": 30,
+          "fill": "#4a90e2",
+          "stroke": "#2c5aa0",
+          "strokeWidth": 0.5
+        },
+        {
+          "type": "rect",
+          "x": 86,
+          "y": 65,
+          "width": 6,
+          "height": 15,
+          "fill": "#4a90e2",
+          "stroke": "#2c5aa0",
+          "strokeWidth": 0.5
+        },
+        {
+          "type": "polyline",
+          "points": "70,70 78,55 86,68",
+          "fill": "none",
+          "stroke": "#e94e77",
+          "strokeWidth": 1.5,
+          "strokeLinecap": "round",
+          "strokeLinejoin": "round"
+        }
+      ]
+    }
+  ]
+}
