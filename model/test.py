@@ -42,7 +42,7 @@ import os
 load_dotenv()
 HF_TOKEN = os.getenv("HF_TOKEN")
 BASE_MODEL = "black-forest-labs/FLUX.1-schnell"
-LOCAL_TENSOR_PATH = "C:/Users/Shaheer.Ahmad/Downloads/Simple_Vector_Flux_v2_renderartist.safetensors"
+LOCAL_TENSOR_PATH = "C:/Users/Shaheer.Ahmad/Downloads/flux-2-klein-9b-kv-fp8.safetensors"
 
 
 print("Loading FLUX Base Model from Hugging Face...")
@@ -64,7 +64,7 @@ pipe.to("cpu")
  
 pipe.enable_model_cpu_offload()
 
-prompt =  "v3ct0r style, simple flat vector art, isolated on white bg, a robotic dog playing fetch"
+prompt =  ""
 print("Starting CPU inference (this will take time)...")
 with torch.no_grad():
     image = pipe(
@@ -74,5 +74,5 @@ with torch.no_grad():
         max_sequence_length=256,
     ).images[0]
 
-image.save("local_test_output.png")
+image.save("./local_test_output.png")
 print("Done! Check local_test_output.png")

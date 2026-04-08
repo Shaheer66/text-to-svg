@@ -139,12 +139,11 @@ def run_full_pipeline():
     svg_output = "data/output/step3_3_final.svg"
     
     
-    reference_img = os.path.join(asset_dir, "flux-klein.png")
-    base_img = os.path.join(output_dir, "flux-klein.png")
-    mask_img = os.path.join(output_dir, "flux-klein_mask.png")
-    svg_output = os.path.join(output_dir, "flux-klein_final.svg")
+    reference_img = os.path.join(asset_dir, "parrot.png")
+    base_img = os.path.join(output_dir, "parrot.png")
+    mask_img = os.path.join(output_dir, "parrot_mask.png")
+    svg_output = os.path.join(output_dir, "parrot_final.svg")
     
-   
     segmentor = SemanticSegmenter()
     tracer = VectorTracer()
     
