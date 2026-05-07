@@ -6,6 +6,9 @@ from pathlib import Path
 import numpy as np
 from PIL import Image, ImageFilter
 from lxml import etree
+import os
+os.add_dll_directory(r"C:\msys64\mingw64\bin")
+
 import cairosvg
 import vtracer
 
@@ -218,3 +221,4 @@ if __name__ == "__main__":
     stats = vectorize_clean(args.input_image, args.output_svg)
     print(f"Saved: {args.output_svg}")
     print(stats)
+

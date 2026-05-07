@@ -69,14 +69,43 @@ rv_5_v3 = " Grande, a doutora Helena Teodoro, que você conhece bem, de Salgueir
 rv_5_vt = " Grande, a doutora Helena Teodoro, que você conhece bem, de Salgueiro, ela foi homenageada em 2024 aqui em São Paulo pela MUM, ou Cidade Unida da Moca, foi enredo de carnaval. Eu também experimentei essa emoção esse ano com a Pérola Negra e você, em 2026, será enredo da Jacarezinho. Eu queria que você definisse.  Essa grande homenagem que um sambista que vem do terreiro do samba recebe de uma escola de samba. Como é que foi a emoção e como é que você está participando aí desse carnaval?  A princípio, a ideia era não aceitar, porque, na minha cabeça, tem muito chão para andar ainda até eu chegar a ser homenageado por uma escola de samba. Será? Dependente de que grupo ela está. É a sua história sendo contada por um ambiente que você cresceu. Só que o fato de eu ter morado no Jacarezinho pesou, porque eu tive muito apoio do Barbeirinho, do falecido Gaspar, do Rod,  Sabe, o compositor esqueletinho do Macambira, o próprio Jusso Bernini, que é o meu parceiro. Então, eu falei, por que não? As pessoas, de certa forma, estão querendo me homenagear. Então, vamos viver essa emoção, já que... Pelo que ouvi do samba, eles estão agradecendo a você, né? Pelo que ouvi do samba, eles estão agradecendo a você, né? Exatamente."
 
 
-wer = jiwer.wer(normalize_text(dz_1_lm), normalize_text(dz_1_ab))
+wer = jiwer.wer(normalize_text(niner_wx), normalize_text(niner_lm))
 print(f"WER: {wer:.2%}")
-print(f"CER: {jiwer.cer(normalize_text(dz_1_lm), normalize_text(dz_1_ab)):.2%}")
+print(f"CER: {jiwer.cer(normalize_text(niner_wx), normalize_text(niner_lm)):.2%}")
 
 print(f"Accuracy: {(1 - wer):.2%}")
 
+import jiwer
+import pandas as pd
 
+ref = normalize_text(niner_wx)
+hyp = normalize_text(niner_lm)
 
+output = jiwer.process_words(ref, hyp)
+
+rows = []
+
+for i, sentence in enumerate(output.alignments):
+    for chunk in sentence:
+        ref_words = output.references[i][chunk.ref_start_idx:chunk.ref_end_idx]
+        hyp_words = output.hypotheses[i][chunk.hyp_start_idx:chunk.hyp_end_idx]
+
+        if chunk.type == "substitute":
+            for r, h in zip(ref_words, hyp_words):
+                rows.append({"niner_wx": r, "niner_lm": h})
+
+        elif chunk.type == "delete":
+            for r in ref_words:
+                rows.append({"niner_wx": r, "niner_lm": ""})
+
+        elif chunk.type == "insert":
+            for h in hyp_words:
+                rows.append({"niner_wx": "", "niner_lm": h})
+
+df = pd.DataFrame(rows)
+df.to_excel("./mismatched_words.xlsx", index=False)
+
+print("Saved mismatches to ./mismatched_words.xlsx")
  
 # def get_different_words(var_a, var_b):
 #     # Split strings into sets of lowercase words for accurate comparison
